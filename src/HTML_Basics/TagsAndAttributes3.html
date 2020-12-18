@@ -1,0 +1,81 @@
+<!--
+- <ul> <ol> and <li> are used for listing items
+- <A> is used for hyperlinks
+  * <A href="https://www.google.com"> Search on website</A>
+  * linking within the same page(named tags)
+  * relative(local) link
+  * remote (absolute) link
+  * email link   (mailto:youremail@server.com)
+  * phone link (tel: 01246789)
+  * target="_blank" attribute
+
+- <img> is used for images
+  * <img src="resources/image.png" width="150 height="30 border="0 alt="Techno Study Logo">
+
+- <input> is used for creating input area for users
+  * <input type="text">
+  * <input type="number">
+  * <input type="date">
+
+- <button>
+
+- <label> is used to define a label for some kind of web elements
+  * <label> work in two ways: Either you wrap the web element by the label tag or
+    use for="Web Element ID" attribute of the label tag without wrapping the web element itself
+
+- <form> is used for defining forms
+  * <input type="submit">  creates a submit button in the form
+  * <form action="/anyRandomURL">
+  * all the child elements of the form must have a name attributes in order to submit them to the URL
+
+- <textarea> is used to create text area for users
+  * <textarea rows="5" columns="25">  rows and columns attributes are optional
+
+- <input type="checkbox"> creates a checkbox
+  * <input type="checkbox" name="checkbox-1" checked>   here checked is an example of an attributed without a value
+
+- <input type="radio"> creates a radio button
+  * <input type="radio" name="gender" value="male">
+  * <input type="radio" name="gender" value="female">
+  * <input type="radio" name="gender" value="notDefined">
+  * we have to use the same name in order to synchronize the radio buttons
+
+- <select> creates a dropdown menu
+  * <select name="car">
+       <option value="toyota"> Toyota </option>
+       <option value="honda"> Honda </option>
+    </select>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<Ol>
+    <li>Math</li>
+    <li>Science</li>
+    <ul>
+        <LI>Biology</LI>
+        <LI>Chemistry</LI>
+        <li>Physics</li>
+    </ul>
+    <LI>English</LI>
+    <LI>History</LI>
+</Ol>
+
+<label>Your date of Birth: <input type="date"></label>
+
+<textarea placeholder="Please type your story here" cols="30" rows="3"></textarea>
+
+<!--
+<a href="https://www.google.com"> Search on website</a>
+<br>
+<a href="TagsAndAttributes1.html"> Relative link to TagsAndAttributes1</a>
+-->
+</body>
+</html>
