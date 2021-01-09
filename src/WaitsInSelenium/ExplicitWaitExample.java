@@ -11,7 +11,7 @@ Explicit Wait:
     Once the condition happens, it will not wait for the rest of the time and continue (just like implicit wait)
   - You need to write extra lines of codes in order to state the condition for each element. But this makes it very flexible.
     Explicit wait is good to use where different conditions apply for different web elements.
-    
+
 Note: - Do not use both in the same method/piece of code. It is bad practice. (Can you imagine why?)
       - Thread.sleep() is not an option or alternative. It is not a type of wait in Selenium anyway. Thread.sleep() waits
         EXACTLY for the said time, no matter what. That is to say it wastes time. Furthermore, you need to handle the exception.
@@ -46,7 +46,7 @@ public class ExplicitWaitExample {
         WebElement enableDisableButton = driver.findElement(By.cssSelector("form#input-example>button"));
         for (int i = 0; i < 4; i++) {
             enableDisableButton.click();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+            wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
             String message = driver.findElement(By.id("message")).getText();
             System.out.println(message);
         }
