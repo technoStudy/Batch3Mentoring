@@ -24,29 +24,31 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExplicitWaitExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Muharrem Ustun\\IdeaProjects\\WebDrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        WebDriverWait wait = new WebDriverWait(driver,4);
+//        WebDriverWait wait = new WebDriverWait(driver,10);
 
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
 
         WebElement addRemoveButton = driver.findElement(By.cssSelector("form#checkbox-example>button"));
         for (int i = 0; i < 4; i++) {
             addRemoveButton.click();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+            Thread.sleep(10000);
             String message = driver.findElement(By.id("message")).getText();
             System.out.println(message);
         }
 
 
-        WebDriverWait wait2 = new WebDriverWait(driver, 10);
+//        WebDriverWait wait2 = new WebDriverWait(driver, 10);
         WebElement enableDisableButton = driver.findElement(By.cssSelector("form#input-example>button"));
         for (int i = 0; i < 4; i++) {
             enableDisableButton.click();
-            wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+//            wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+            Thread.sleep(10000);
             String message = driver.findElement(By.id("message")).getText();
             System.out.println(message);
         }
