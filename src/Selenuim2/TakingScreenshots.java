@@ -25,6 +25,5 @@ public class TakingScreenshots {
             e.printStackTrace();
         }
 
-
     }
 }

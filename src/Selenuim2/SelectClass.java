@@ -19,7 +19,6 @@ public class SelectClass {
         Select days = new Select(driver.findElement(By.id("select-demo")));
         System.out.println("Multiple selection of days: " + days.isMultiple());
 
-
         Select states = new Select(driver.findElement(By.id("multi-select")));
         System.out.println("Multiple selection of states: " + states.isMultiple());
 

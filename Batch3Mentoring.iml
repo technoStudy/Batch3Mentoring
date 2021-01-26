@@ -26,5 +26,6 @@
     <orderEntry type="library" name="guava-25.0-jre" level="project" />
     <orderEntry type="library" name="okhttp-3.11.0" level="project" />
     <orderEntry type="library" name="commons-io-2.8" level="project" />
+    <orderEntry type="library" name="TestNG" level="project" />
   </component>
 </module>

@@ -8,10 +8,9 @@ package TestNG;
 - TestNG is similar to JUnit (especially JUnit 4), but it is not a JUnit extension.
  */
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /*
 TestNG Features:
