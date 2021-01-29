@@ -1,6 +1,5 @@
 package WritingTestCases;
 
-
 public class Grading {
 
     /*

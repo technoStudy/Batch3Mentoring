@@ -1,5 +1,5 @@
 package WritingTestCases;
 
-enum LetterGrade {
+public enum LetterGrade {
     A, B, C, D, F, UnsupportedGrade
 }
