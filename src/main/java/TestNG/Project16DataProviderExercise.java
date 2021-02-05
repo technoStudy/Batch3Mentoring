@@ -26,6 +26,7 @@ public class Project16DataProviderExercise {
     WebDriverWait wait;
     JavascriptExecutor jse;
 
+
     @BeforeClass
     public void setup() {
         WebDriverManager.chromedriver().setup();
@@ -62,11 +63,11 @@ public class Project16DataProviderExercise {
     }
 
     @Test(dataProvider = "employeeProvider")
-    public void test1(String firstName, String lastName, String employeeId, String documentNo) {
+    public void createEmployeeTest(String firstName, String lastName, String employeeId, String documentNo) {
         openEmployeesPage();
         attemptToCreateEmployee(firstName, lastName, employeeId, documentNo);
         openEmployeesPage();
-        if (lastName.equals("")){
+        if (lastName.equals("")) {
             searchEmployeeByFirstName(firstName);
         } else {
             searchEmployeeByLastName(lastName);
@@ -75,20 +76,26 @@ public class Project16DataProviderExercise {
         Assert.assertTrue(driver.findElement(By.xpath("//table/tbody/tr[1]/td[1]")).getText().contains("No data to show"));
     }
 
-//    @AfterMethod
-//    public void takeScreenShotIfFails(ITestResult result){
-//        if (result.getStatus() == ITestResult.FAILURE){
-//            File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//            try {
-//                String folderPath = "C:\\Users\\Muharrem Ustun\\IdeaProjects\\MavenProject\\Batch3Mentoring\\src\\main\\resources\\screenshots";
-//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss-n");
-//                String time = LocalDateTime.now().format(formatter);
-//                FileUtils.copyFile(sourceFile,new File(folderPath + result.getMethod().getMethodName() + "_" + time +".png"));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+    @AfterMethod
+    public void takeScreenshotWhenTastFails(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss-nn");
+            String time = LocalDateTime.now().format(formatter);
+
+            File sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            String folderPath = "C:\\Users\\Muharrem Ustun\\IdeaProjects\\MavenProject\\Batch3Mentoring\\src\\main\\resources\\screenshots\\";
+            String fileName = result.getMethod().getMethodName() + "_" + time + ".png";
+
+            File destinationFile = new File(folderPath + fileName);
+
+            try {
+                FileUtils.copyFile(sourceFile, destinationFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     @AfterClass
     public void cleanUp() {
